@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+
+body {
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a; 
+  color: #f4f4f4; 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+
+  user-select: none; 
+  -moz-user-select: none;
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+span,svg, button,input, img:active, a:active {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-focus-ring-color: rgba(0, 0, 0, 0);
+  outline: none !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#444, #5DC45D);
+  border: 1px solid #333;
+  border-radius: 5px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); 
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  transition: background-color 0.3s ease;
+}
+
+/* RESOLUÇÃO IGUAL OU A CIMA DE 1920X1080 */
+
+@media screen and (min-width: 1920px) {
+
+    ::-webkit-scrollbar {
+      width: 14px;
+    }
+
+
+    h1 {
+      font-size: 60px;
+      margin-top: 20px;
+    }
+  
+    h2 {
+      font-size: 40px;
+    }
+    
+    .MiniMenuUser, .MiniMenuAdmin {
+      display: block; 
+      position: absolute;
+      background-color: #333333;
+      border: 2px solid #4CAF50;
+      padding: 8px;
+      top: 12%;
+      right: 20px; 
+      height: auto;
+      width: auto; 
+      min-width: 120px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      color: #ffffff;
+      text-align: center;
+      z-index: 1;
+      font-size: 20px;
+      opacity: 0; 
+      visibility: hidden; 
+      transform: translateY(-10px); 
+      transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  }
+  
+  .MiniMenuUser.show, .MiniMenuAdmin.show{
+      opacity: 1; /* Tornar visível */
+      visibility: visible; /* Tornar visível */
+      transform: translateY(0); /* Posicionar no lugar */
+  }
+  
+  .MiniMenuUser span, .MiniMenuAdmin span{
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+  }
+  
+  .MiniMenuUser span:hover, .MiniMenuAdmin span:hover{
+      color: #4CAF50;
+  }
+  
+  .MiniMenuUser hr.line, .MiniMenuAdmin hr.line{
+      border: none;
+      border-top: 1px solid #555555;
+      margin: 8px 0;
+  }
+  
+    a {
+      color: #2ece36; /* Cor do link */
+      font-weight: 500;
+      font-size: 20px;
+      text-decoration: none; /* Removendo sublinhado padrão */
+      transition: color 0.3s ease; /* Adicionando transição de cor */
+    }
+    
+    a:hover {
+      color: #3eb144; /* Cor do link ao passar o mouse */
+    }
+
+nav {
+    background: #222222;
+    padding: 20px 60px; /* Aumento do preenchimento */
+    border-left: none;
+    border-right: none;
+    color: #f2f2f2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Adiciona uma borda de sombra na parte inferior */
+    height: 100px; /* Aumento da altura */
+    display: flex; /* Transforma a barra de navegação em um flex container */
+    align-items: center; /* Centraliza verticalmente os itens */
+}
+
+/* Estilo para a lista */
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* Ocupa todo o espaço disponível no flex container */
+}
+
+/* Estilo para o logo */
+nav ul li.logo {
+    flex: 1;
+}
+
+/* Estilo para os itens */
+nav ul div.items {
+    padding: 0 25px;
+    display: inline-flex;
+}
+
+/* Estilo para os links */
+nav ul div.items a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 22px; /* Aumento do tamanho da fonte */
+    padding: 3px 18px; /* Ajuste do espaçamento interno */
+    position: relative;
+    margin-right: 10px;
+}
+
+nav ul div.items a:hover {
+  color: #4CAF50; 
+  text-shadow: 0px 0px 5px rgba(76, 175, 80, 0.8); 
+  transition: color 0.2s ease;
+}
+
+nav li.active a {
+  color: white; 
+  font-weight: bold;
+  background-color: #4CAF50; 
+  padding: 8px 20px;
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+  border-left: 8px solid #ffffff;
+  transition: background-color 0.5s ease, border-left 0.5s ease, color 0.5s ease; 
+}
+
+nav li.active a:hover {
+  color: #4CAF50;
+  background-color: white; 
+  border-left: 8px solid #4CAF50;
+}
+
+}
+
+/* RESOLUÇÃO A BAIXO DE 1920X1080 */
+@media screen and (max-width: 1919px) and (min-width: 501px) {
+
+  /* Estilo da barra de rolagem */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  h1 {
+      font-size: 50px;
+      margin-top: 20px;
+  }
+
+  h2 {
+      font-size: 30px;
+  }
+
+  img.user, img.admin {
+    width: 40px;
+    height: auto;
+  }
+  
+
+  .MiniMenuUser, .MiniMenuAdmin {
+    display: block; /* Alterado para block para permitir animação */
+    position: absolute;
+    background-color: #333333;
+    border: 2px solid #4CAF50;
+    padding: 8px;
+    top: 14%;
+    right: 10px; 
+    height: auto; /* Ajustado para auto para que a altura se ajuste ao conteúdo */
+    width: auto; 
+    min-width: 100px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    text-align: center;
+    z-index: 1;
+    font-size: 16px;
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden; /* Inicialmente escondido */
+    transform: translateY(-10px); /* Posicionado acima */
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.MiniMenuUser.show, .MiniMenuAdmin.show {
+    opacity: 1; /* Tornar visível */
+    visibility: visible; /* Tornar visível */
+    transform: translateY(0); /* Posicionar no lugar */
+}
+
+.MiniMenuUser span, .MiniMenuAdmin span {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.MiniMenuUser span:hover, .MiniMenuAdmin span:hover {
+    color: #4CAF50;
+}
+
+.MiniMenuUser hr.line, .MiniMenuAdmin hr.line {
+    border: none;
+    border-top: 1px solid #555555;
+    margin: 8px 0;
+}
+
+
+  body {
+      font-family: Arial, sans-serif;
+      font-weight: 500;
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a; 
+      color: #f4f4f4; 
+  }
+
+  a {
+    color: #2ece36; /* Cor do link */
+    font-weight: 500;
+    font-size: 20px;
+    text-decoration: none; /* Removendo sublinhado padrão */
+    transition: color 0.3s ease; /* Adicionando transição de cor */
+  }
+
+  a:hover {
+    color: #3eb144; /* Cor do link ao passar o mouse */
+  }
+
+  nav {
+    background: #222222;
+    padding: 15px 40px; /* Ajustando o preenchimento */
+    border-left: none;
+    border-right: none;
+    color: #f2f2f2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Mantendo a borda de sombra na parte inferior */
+    height: 80px; /* Ajustando a altura */
+    display: flex; /* Transformando a barra de navegação em um flex container */
+    align-items: center; /* Centralizando verticalmente os itens */
+  }
+
+  /* Estilo para a lista */
+  nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex: 1; /* Ocupando todo o espaço disponível no flex container */
+  }
+
+  /* Estilo para o logo */
+  nav ul li.logo {
+    flex: 1;
+  }
+
+  /* Estilo para os itens */
+  nav ul div.items {
+    padding: 0 20px; /* Ajustando o espaçamento interno */
+    display: inline-flex;
+  }
+
+  /* Estilo para os links */
+  nav ul div.items a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px; /* Ajustando o tamanho da fonte */
+    padding: 3px 13px; /* Ajustando o espaçamento interno */
+    position: relative;
+    margin-right: 10px;
+  }
+
+  /* Estilo para hover nos links */
+  nav ul div.items a:hover {
+    color: #4CAF50; /* Cor do texto ao passar o mouse */
+    text-shadow: 0px 0px 5px rgba(76, 175, 80, 0.8); /* Sombra do texto */
+    transition: color 0.2s ease; /* Transição suave da cor */
+  }
+
+  /* Estilo para o link ativo */
+  nav li.active a {
+    color: white; /* Cor do texto quando ativo */
+    font-weight: bold;
+    background-color: #4CAF50; /* Cor de fundo quando ativo */
+    padding: 6px 15px; /* Ajustando o preenchimento */
+    border-radius: 4px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    border-left: 8px solid #ffffff; /* Ajustando a largura da borda esquerda */
+    transition: background-color 0.5s ease, border-left 0.5s ease, color 0.5s ease; /* Transição mais longa */
+  }
+
+  /* Estilo para hover nos links ativos */
+  nav li.active a:hover {
+    color: #4CAF50; /* Cor do texto ao passar o mouse */
+    background-color: white; /* Cor de fundo ao passar o mouse */
+    border-left: 8px solid #4CAF50; /* Cor da borda esquerda ao passar o mouse */
+  }
+
+}
+
+/* RESOLUÇÃO COM LIMITE DE 500PX */
+@media screen and (max-width: 500px) and (min-width: 320px) {
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  h1 {
+      font-size: 32px;
+      margin-top: 10px;
+  }
+
+  h2 {
+      font-size: 24px;
+  }
+
+  body {
+      font-family: Arial, sans-serif;
+      font-weight: 500;
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a; 
+      color: #f4f4f4; 
+  }
+
+  a {
+    color: #2ece36; 
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+  }
+
+  a:hover {
+    color: #3eb144; 
+  }
+
+  nav {
+    background: #222222;
+    padding: 15px 10px;
+    border-left: none;
+    border-right: none;
+    color: #f2f2f2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    width: 100%;
+}
+
+nav ul li.logo a {
+    margin-bottom: calc(10px + (12 / 180) * (100vw - 320px));
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul div.items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+nav ul div.items a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: calc(57% + (28 / 900) * (100vw - 320px));
+    padding: calc(2px + (4 / 900) * (100vw - 320px)) calc(6px + (12 / 900) * (100vw - 320px));
+    position: relative;
+    margin-right: calc(4px + (8 / 900) * (100vw - 320px));
+}
+
+nav ul div.items a:hover {
+    color: #4CAF50;
+    text-shadow: 0px 0px 5px rgba(76, 175, 80, 0.8);
+    transition: color 0.2s ease;
+}
+
+nav li.active a {
+    color: white;
+    font-weight: bold;
+    background-color: #4CAF50;
+    padding: 5px 8px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+    border-left: 4px solid #ffffff;
+    transition: background-color 0.5s ease, border-left 0.5s ease, color 0.5s ease;
+}
+
+nav li.active a:hover {
+    color: #4CAF50;
+    background-color: white;
+    border-left: 4px solid #4CAF50;
+}
+
+img.user, img.admin {
+    width: calc(25px + (5 / 180) * (100vw - 320px));
+    height: auto;
+    margin-top: calc(12px + (5 / 180) * (100vw - 320px));
+    cursor: pointer;
+    margin-bottom: auto;
+}
+
+.user-container {
+    margin-bottom: auto;
+    position: relative;
+}
+
+.MiniMenuUser {
+  display: none;
+  position: absolute;
+  top: calc(45px + (5 / 180) * (100vw - 320px));
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background-color: #333333;
+  border: 1.5px solid #4CAF50;
+  padding: 6px;
+  height: calc(70px + (15 / 180) * (100vw - 320px));
+  width: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  text-align: center;
+  z-index: 1;
+  font-size: calc(10px + (3 / 180) * (100vw - 320px));
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.MiniMenuAdmin {
+  display: none;
+  position: absolute;
+  top: calc(105px + (35 / 180) * (100vw - 320px));
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background-color: #333333;
+  border: 1.5px solid #4CAF50;
+  padding: 6px;
+  height: calc(70px + (15 / 180) * (100vw - 320px));
+  width: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  text-align: center;
+  z-index: 1;
+  font-size: calc(10px + (3 / 180) * (100vw - 320px));
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+.MiniMenuUser.show, .MiniMenuAdmin.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.MiniMenuUser span, .MiniMenuAdmin span {
+  display: block;
+  margin-bottom: calc(5px + (2 / 180) * (100vw - 320px));
+  margin-left: calc(8px + (5 / 180) * (100vw - 320px));
+  margin-right: calc(8px + (5 / 180) * (100vw - 320px));
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.MiniMenuUser span:hover, .MiniMenuAdmin span:hover {
+  color: #4CAF50;
+}
+
+.MiniMenuUser hr.line, .MiniMenuAdmin hr.line {
+  border: none;
+  border-top: 1px solid #555555;
+  margin: 5px auto;
+}
+
+}

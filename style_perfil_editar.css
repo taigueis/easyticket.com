@@ -1,0 +1,405 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222; 
+    color: #fff; 
+    margin: 0;
+}
+
+h1 {
+    color: #fff; 
+    text-align: center; 
+    margin-top: 20px; 
+    margin-bottom: 30px; 
+}
+
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 17px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444; 
+    color: #fff; 
+    font-size: 16px;
+}
+
+input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff; 
+    cursor: pointer;
+    transition: background-color 0.5s;
+    font-size: 16px; /* Defina o tamanho da fonte inicial */
+    font-weight: 500; /* Define o peso da fonte inicial */
+}
+
+input[type="button"]:hover {
+    background-color: #388e3c; 
+}
+
+input[type="reset"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #808080;
+    color: #fff; 
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+input[type="reset"]:hover {
+    background-color: #666666; 
+}
+
+.primary-eliminar,
+.primary-inserir,
+.primary-editar,
+.primary-trajeto,
+.secondary {
+  transition: background-color 0.3s ease, color 0.3s ease; /* Adicionando a transição de cor */
+}
+
+.primary-eliminar {
+  background-color: rgb(240, 80, 74);
+  color: white;
+}
+.primary-eliminar:hover {
+  background-color: rgb(210, 54, 47); /* Tom mais escuro para hover */
+}
+
+.primary-inserir {
+  background-color: rgb(110, 235, 48);
+  color: white;
+}
+.primary-inserir:hover {
+  background-color: rgb(60, 200, 33); /* Tom mais escuro para hover */
+}
+
+.primary-editar {
+  background-color: rgb(255, 208, 0);
+  color: white;
+}
+.primary-editar:hover {
+  background-color: rgb(255, 172, 17); /* Tom mais escuro para hover */
+}
+
+.primary-trajeto {
+  background-color: rgb(162, 212, 255);
+  color: white;
+}
+.primary-trajeto:hover {
+  background-color: rgb(51, 145, 255); /* Tom mais escuro para hover */
+}
+
+.secondary {
+  background-color: #ddd;
+}
+.secondary:hover {
+  background-color: #c2c2c2;
+}
+
+@media screen and (max-width: 1919px) {
+
+    .card {
+        width: 300px;
+        height: fit-content;
+        background: rgb(255, 255, 255);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 30px;
+        position: relative;
+        box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.068);
+      }
+      .card-content {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .card-heading {
+        font-size: 25px;
+        font-weight: 700;
+        color: rgb(27, 27, 27);
+      }
+      .card-description {
+        font-weight: 100;
+        color: rgb(102, 102, 102);
+      }
+      .card-button-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .card-button {
+        width: 50%;
+        height: 35px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 18px;
+      }
+  
+    .confirm-overlay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+      z-index: 9999; /* Colocar a camada de sobreposição na frente de tudo */
+    }
+  
+    .confirm-box {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+  
+
+  .error {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    max-width: fit-content;  
+    padding: 12px;
+    display: flex;
+    flex-direction: column; /* Alterado para orientação vertical */
+    align-items: center; /* Centralizado horizontalmente */
+    background: #FCE8DB;
+    border-radius: 8px;
+    border: 1px solid #EF665B;
+    box-shadow: 0px 0px 5px -3px #111;
+    position: static; /* Posicionado estáticamente */
+    margin-top: 30px;
+    top: 50%; /* Centralizado verticalmente */
+    transform: translateY(-50%); /* Corrigir a centralização vertical */
+  }
+
+.error__content {
+    display: flex;
+    flex-direction: row; /* Alterado para orientação horizontal */
+    align-items: center;
+}
+
+.error__icon {
+  width: 25px;
+  height: 25px;
+  transform: translateY(1px);
+  margin-right: 15px;
+}
+
+.error__icon path {
+  fill: #EF665B;
+}
+
+.error__text {
+  font-weight: 600;
+  font-size: 18px;
+  color: #71192F;
+  white-space: nowrap;
+}
+
+.error__close {
+  width: 25px;
+  height: 25px;
+  transform: translateY(3px);
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.error__close path {
+    fill: #71192F;
+}
+
+}
+
+@media screen and (min-width: 1920px) {
+    .card {
+        width: 450px;
+        height: fit-content;
+        background: rgb(255, 255, 255);
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        padding: 45px;
+        position: relative;
+        box-shadow: 30px 30px 45px rgba(0, 0, 0, 0.068);
+      }
+      .card-content {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 7.5px;
+      }
+      .card-heading {
+        font-size: 30px;
+        font-weight: 700;
+        color: rgb(27, 27, 27);
+      }
+      .card-button-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+      .card-button {
+        width: 75%;
+        height: 50px;
+        border-radius: 15px;
+        border: none;
+        cursor: pointer;
+        font-weight: 900;
+        font-size: 25px;
+      }
+      
+      .confirm-overlay {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+        z-index: 9999; /* Colocar a camada de sobreposição na frente de tudo */
+      }
+      
+      .confirm-box {
+        background-color: #fff;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+      }
+      
+
+      .error {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        max-width: fit-content;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #FCE8DB;
+        border-radius: 8px;
+        border: 1px solid #EF665B;
+        box-shadow: 0px 0px 5px -3px #111;
+        position: static;
+        margin-top: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        /* Definindo o valor de escala */
+        transform: scale(1.1); /* Aumenta tudo em 20% */
+      }
+      
+      /* Aplicando a escala para os elementos filhos */
+      .error__content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      
+          
+      .error__icon svg {
+        width: 30px; /* Aumento da largura do ícone */
+        height: 30px; /* Aumento da altura do ícone */
+      }
+      
+      .error__close svg {
+        width: 25px; /* Aumento da largura do botão de fechar */
+        height: 25px; /* Aumento da altura do botão de fechar */
+      }
+      
+      .error__icon {
+        width: 30px; /* Aumenta em 20% */
+        height: 30px; /* Aumenta em 20% */
+        transform: translateY(1px);
+        margin-right: 13px; /* Aumenta em 20% */
+      }
+      
+      .error__icon path {
+        fill: #EF665B;
+      }
+      
+      .error__text {
+        font-weight: 600;
+        font-size: 21.6px; /* Aumenta em 20% */
+        color: #71192F;
+        white-space: nowrap;
+      }
+      
+      .error__close {
+        width: 30px; /* Aumenta em 20% */
+        height: 30px; /* Aumenta em 20% */
+        transform: translateY(3px);
+        margin-left: 9.6px; /* Aumenta em 20% */
+        cursor: pointer;
+      }
+      
+      .error__close path {
+        fill: #71192F;
+      }
+}
+
+#loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+    z-index: 9999;
+}
+
+#loading .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 3px solid #999; /* Cor da borda mais clara */
+    border-top-color: #ccc; /* Cor da borda superior */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
